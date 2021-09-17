@@ -31,5 +31,5 @@ You will have to create your token on Github and create a repository dispatch ev
 
 If the request is succesfull you should read: "Ok, in a few minutes the changes will be published" else you should read: "Whoooo, something went wrong, the response code was: XXX" where XXX is the response code from Github.
 
-> :warning: **Note**: The created token is alternative to your password, if someone has access to your token will be able to act on your behalf in Github. Is your responsability to secure the Cockpit config folder where will be stored
+> :warning: **Note**: The created token is an alternative to your password, if someone has access to your token will be able to act on your behalf in Github. Is your responsability to secure the Cockpit config folder where it will be stored
  
