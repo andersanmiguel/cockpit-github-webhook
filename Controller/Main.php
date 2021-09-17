@@ -1,11 +1,11 @@
 <?php
 
-namespace Ghwebhook\Controller;
+namespace GithubWebhook\Controller;
 
 class Main extends \Cockpit\AuthController {
 
     public function index() {
-        return $this->render("ghwebhook:views/index.php");
+        return $this->render("githubwebhook:views/index.php");
     }
 
     public function deploy() {
@@ -14,7 +14,7 @@ class Main extends \Cockpit\AuthController {
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => $this->app->config['ghwebhook']['url'],
+            CURLOPT_URL => $this->app->config['githubwebhook']['url'],
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -25,7 +25,7 @@ class Main extends \Cockpit\AuthController {
             CURLOPT_POSTFIELDS =>'{ "event_type" : "Update from Cockpit CMS" }',
             CURLOPT_HTTPHEADER => array(
                 'Accept: application/vnd.github.v3+json',
-                'Authorization: token ' . $this->app->config['ghwebhook']['token'],
+                'Authorization: token ' . $this->app->config['githubwebhook']['token'],
                 'User-Agent: CMS Cockpit',
                 'Content-Type: application/json'
             ),
@@ -36,9 +36,9 @@ class Main extends \Cockpit\AuthController {
         curl_close($curl);
 
         if ($code == 204) {
-            return $this->render("ghwebhook:views/deploy.php");
+            return $this->render("githubwebhook:views/deploy.php");
         } else {
-            return $this->render("ghwebhook:views/no-deploy.php", ['code' => $code]);
+            return $this->render("githubwebhook:views/no-deploy.php", ['code' => $code]);
         }
 
     }
