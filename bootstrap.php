@@ -7,10 +7,10 @@ if (COCKPIT_ADMIN_CP) {
             'label' => 'Deploy site',
             'icon' => 'assets:app/media/icons/paperplane.svg',
             'route' => '/githubwebhook',
-            'active' => strpos($this['route'], '/ghwebhook') === 0
+            'active' => strpos($this['route'], '/githubwebhook') === 0
             ]);
 
-        $this->bindClass('GithubWebhook\\Controller\\Main', 'ghwebhook');
+        $this->bindClass('GithubWebhook\\Controller\\Main', 'githubwebhook');
 
     });
 }
