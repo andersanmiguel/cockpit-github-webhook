@@ -1,6 +1,6 @@
-# Addon for make "on demand" calls to Github Actions
+# Make "on demand" calls to Github Actions from Cockpit CMS
 
-Addon to trigger a Github Action on demand.
+Addon for [Cockpit CMS](https://getcockpit.com/) to trigger a Github Action on demand.
 
 ## Install
 
@@ -30,3 +30,6 @@ You will have to create your token on Github and create a repository dispatch ev
 * Click on the "Publish Site" link on the page
 
 If the request is succesfull you should read: "Ok, in a few minutes the changes will be published" else you should read: "Whoooo, something went wrong, the response code was: XXX" where XXX is the response code from Github.
+
+> :warning: **Note**: The created token is alternative to your password, if someone has access to your token will be able to act on your behalf in Github. Is your responsability to secure the Cockpit config folder where will be stored
+ 
