@@ -16,7 +16,7 @@
                     <img class="uk-svg-adjust uk-text-muted" src="@url('assets:app/media/icons/paperplane.svg')" width="80" height="80" alt="Forms" data-uk-svg />
                 </p>
                 <hr>
-                <span class="uk-text-large"><a href="@route('/ghwebhook/deploy')">@lang('Publish Site')</a></span>
+                <span class="uk-text-large"><a href="@route('/githubwebhook/deploy')">@lang('Publish Site')</a></span>
 
             </div>
 

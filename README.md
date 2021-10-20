@@ -18,6 +18,15 @@ git clone https://github.com/andersanmiguel/cockpit-github-webhook.git GithubWeb
 githubwebhook:
   url: 'https://api.github.com/repos/{user}/{repo}/dispatches'
   token: 'ghp_XXXXXXXXXXXXXXXXXXXXXXXXXXX'
+  event_type: 'Update from Cockpit CMS'
+```
+
+* Update your workflow yaml file
+```yaml
+on:
+  repository_dispatch:
+    types:
+      - Update from Cockpit CMS
 ```
 
 You will have to create your token on Github and create a repository dispatch event:

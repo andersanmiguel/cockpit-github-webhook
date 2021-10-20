@@ -22,7 +22,7 @@ class Main extends \Cockpit\AuthController {
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS =>'{ "event_type" : "Update from Cockpit CMS" }',
+            CURLOPT_POSTFIELDS =>'{ "event_type" : "' . $this->app->config['githubwebhook']['event_type'] . '" }',
             CURLOPT_HTTPHEADER => array(
                 'Accept: application/vnd.github.v3+json',
                 'Authorization: token ' . $this->app->config['githubwebhook']['token'],
